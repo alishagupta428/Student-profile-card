@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Student Profile Card</h2>
+            <form id="profileForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="studentName">Student Name <span class="required-star">*</span></label>
+                        <input type="text" id="studentName" placeholder="Student Name">
+                        <span class="error-msg" id="nameError">Please enter Student Name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rollNumber">Roll Number <span class="required-star">*</span></label>
+                        <input type="text" id="rollNumber" placeholder="Roll Number">
+                        <span class="error-msg" id="rollError">Please enter Roll Number</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course <span class="required-star">*</span></label>
+                        <input type="text" id="course" placeholder="Course">
+                        <span class="error-msg" id="courseError">Please enter Course</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ID <span class="required-star">*</span></label>
+                        <input type="email" id="email" placeholder="abc.123@domain.com">
+                        <span class="error-msg" id="emailError">Please enter Email ID</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required-star">*</span></label>
+                        <input type="tel" id="phone" placeholder="Phone Number" maxlength="10">
+                        <span class="error-msg" id="phoneError">Please enter valid 10-digit phone number</span>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUpload">Upload Profile Image <span class="required-star">*</span></label>
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <span class="error-msg" id="imageError">Please choose your file</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender <span class="required-star">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female" checked> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                </div>
+                  
+                <div class="form-group">
+                    <label>Skills <span class="required-star">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                        <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                        <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                        <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+                    </div>
+                    <span class="error-msg" id="skillsError">Please select at least one skill</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="about">About Student <span class="required-star">*</span></label>
+                    <textarea id="about" rows="3" placeholder="Write something..."></textarea>
+                    <span class="error-msg" id="aboutError">Please enter about student</span>
+                </div>
+
+                <button type="submit" id="saveBtn">Save Profile</button>
+            </form>
+        </div>
+
+        <div class="preview-section">
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="avatar-container">
+                        <img id="cardImage" src="https://via.placeholder.com/100" alt="Profile Picture">
+                    </div>
+                    <h3 id="cardName">Student Name</h3>
+                    <p id="cardEmail">email@domain.com</p>
+                </div>
+                <div class="card-body">
+                    <h4>ACADEMIC & PERSONAL DETAILS</h4>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="label">Roll No:</span>
+                            <span class="value" id="cardRoll">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Course:</span>
+                            <span class="value" id="cardCourse">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Phone:</span>
+                            <span class="value" id="cardPhone">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Gender:</span>
+                            <span class="value" id="cardGender">-</span>
+                        </div>
+                    </div>
+
+                    <h4>SKILLS</h4>
+                    <p id="cardSkills" class="skills-text">No skills selected</p>
+
+                    <h4>ABOUT</h4>
+                    <p id="cardAbout" class="about-text">No information provided yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
